@@ -3,6 +3,6 @@ loan = int(loan)
 
 print(f'El prestamo introducido es {loan}')
 
-loan_x2 = loan*2
+loan_x20 = loan*20
 
-print(f'Si doblas el prestamo sería {loan_x2}')
+print(f'Si multiplicas por 20 el prestamo sería {loan_x2}')
