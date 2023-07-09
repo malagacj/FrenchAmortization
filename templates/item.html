@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Item Details</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>FRENCH AMORTIZATION CALCULATION</h1>
+    <form method="post">
+	    <div>
+		    <label for="capital">CAPITAL (Co): </label><br>
+		    <input id="capital" type="number" name="capital"></input>
+	    </div>
+	    <div>
+		    <label for="interes">INTERES (i) [Interes Nominal Anual]: </label><br>
+		    <input id="interes" type="number" name="interes"></input>
+	    </div>
+	    <div>
+		    <label for="periodos">PERIODOS (n): </label><br>
+		    <input id="periodos" type="number" name="periodos"></input>
+	    </div>
+
+    </form>
+
+    <input type="submit" value="Calcular" onclick="calcular()"></input>
+
+    <script>
+	   function calcular_cuota(capital, interes, periodos) {
+                   alpha = (1 + interes) ** -periodos 
+	           cuota = capital * interes / (1 - alpha)
+		   return cuota.toFixed(2)
+	   }
+
+	   function calcular() {
+		   capital = parseFloat(document.getElementById("capital").value)
+		   interes = parseFloat(document.getElementById("interes").value)
+		   periodos = parseFloat(document.getElementById("periodos").value)
+
+		   cuota = calcular_cuota(capital, interes, periodos)
+		   console.log(cuota)
+           }
+    </script>
+</body>
+</html>
