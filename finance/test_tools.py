@@ -2,6 +2,8 @@ from finance.tools import capitalization_ratio, french_amortization_fee
 
 
 def test_capitalization_ratio():
+    """ Checks valid returned values for capitalization_ratio function """
+
     assert capitalization_ratio(1, 1) == 0.5
     assert capitalization_ratio(3, 1) == 0.25
     assert capitalization_ratio(4, 1) == 0.2
@@ -16,5 +18,11 @@ def test_capitalization_ratio():
 
 
 def test_french_amortization_fee():
-    assert french_amortization_fee(1_000_000, 1, 1) == 2_000_000
-    assert french_amortization_fee(1_000_000, 0.01, 1) == 1_010_000
+    """ Checks valid returned values for french_amortization_fee function
+
+        Note: Returned values need to be rounded. This is acceptable behaviour
+        from any programming language
+    """
+
+    assert round(french_amortization_fee(1_000_000, 1, 1)) == 2_000_000
+    assert round(french_amortization_fee(1_000_000, 0.01, 1)) == 1_010_000

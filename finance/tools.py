@@ -9,6 +9,3 @@ def french_amortization_fee(capital, interest, periods):
 
     cap_rat = capitalization_ratio(interest, periods)
     return capital * interest / (1 - cap_rat)
-
-
-capital = input("")
