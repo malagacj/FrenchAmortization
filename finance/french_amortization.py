@@ -40,5 +40,5 @@ def amortization_table(capital, interest, periods):
     return amortization_list
 
 
-if __main__ == '__name__':
+if __name__ == '__main__':
     print(amortization_table(1000, 0.01, 10))
