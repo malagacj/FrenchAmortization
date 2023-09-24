@@ -1,4 +1,4 @@
-from finance.tools import capitalization_ratio, french_amortization_fee
+from finance.french_amortization import capitalization_ratio, amortization_fee
 
 
 def test_capitalization_ratio():
@@ -17,12 +17,12 @@ def test_capitalization_ratio():
     assert capitalization_ratio(4, 4) == 0.0016
 
 
-def test_french_amortization_fee():
+def test_amortization_fee():
     """ Checks valid returned values for french_amortization_fee function
 
         Note: Returned values need to be rounded. This is acceptable behaviour
         from any programming language
     """
 
-    assert round(french_amortization_fee(1_000_000, 1, 1)) == 2_000_000
-    assert round(french_amortization_fee(1_000_000, 0.01, 1)) == 1_010_000
+    assert round(amortization_fee(1_000_000, 1, 1)) == 2_000_000
+    assert round(amortization_fee(1_000_000, 0.01, 1)) == 1_010_000

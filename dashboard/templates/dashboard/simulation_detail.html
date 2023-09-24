@@ -1,0 +1,26 @@
+<h2>{{ object }}</h2>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Capital</th>
+      <th>Interest Fee</th>
+      <th>Amortization</th>
+      <th>Fee</th>
+      <th>Live Capital</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for row in object.french_amortization %}
+  <tr>
+    <td>{{ row.capital }}</td>
+    <td>{{ row.interest_fee }}</td>
+    <td>{{ row.amortization }}</td>
+    <td>{{ row.fee }}</td>
+    <td>{{ row.live_capital }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
