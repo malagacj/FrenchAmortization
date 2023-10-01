@@ -7,3 +7,5 @@ services:
     image: french-amortization:0.0.1
     ports:
       - 8000:8000
+    environment:
+      ALLOWED_HOSTS = ''
