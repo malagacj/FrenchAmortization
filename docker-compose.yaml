@@ -4,9 +4,10 @@ services:
 
   frenchy:
     build: ./
-    image: french-amortization:0.0.1
+    image: french-amortization:0.0.5
     ports:
       - 8000:8000
     environment:
-      ALLOWED_HOSTS = ''
-      DEBUG = ''
+      - DEBUG = ''
+      - ALLOWED_HOSTS = ''
+      - CSRF_TRUSTED_ORIGINS = ''
