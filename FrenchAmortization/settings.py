@@ -126,7 +126,4 @@ STATIC_ROOT = BASE_DIR / 'static'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-try:
-    from .extra_settings import *
-except:
-    pass
+from .extra_settings import *
