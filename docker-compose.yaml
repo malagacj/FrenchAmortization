@@ -1,13 +1,26 @@
 version: '3.1'
 
 services:
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - frenchy-db:/var/lib/postgresql/data
 
   frenchy:
     build: ./
-    image: french-amortization:0.0.5
+    image: french-amortization:0.0.6
     ports:
-      - 8000:8000
+    - 8000:8000
     environment:
-      - DEBUG = ''
-      - ALLOWED_HOSTS = ''
-      - CSRF_TRUSTED_ORIGINS = ''
+    - DEBUG=''
+    - ALLOWED_HOSTS=localhost
+    - CSRF_TRUSTED_ORIGINS=http://localhost:8000
+
+volumes:
+  frenchy-db:
