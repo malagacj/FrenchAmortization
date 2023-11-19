@@ -13,10 +13,10 @@ if csrf_to := os.environ.get('CSRF_TRUSTED_ORIGINS'):
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        'HOST': 'db',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'NAME': 'postgres',
-        'PORT': '5432'
+        'HOST': os.environ['HOST'],
+        'USER': os.environ['USER'],
+        'PASSWORD': os.environ['PASSWORD'],
+        'NAME': os.environ['NAME'],
+        'PORT': os.environ['PORT']
     }
 }
